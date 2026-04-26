@@ -108,8 +108,11 @@ body {
   overflow:hidden;
 }
 
+.hero {
+  position: relative;
+}
 .hero-bg {
-  position:fixed; inset:0; z-index:-1; pointer-events:none;
+  position:absolute; inset:0; z-index:0; pointer-events:none; overflow:hidden;
 }
 .blob {
   position:absolute;
@@ -141,7 +144,7 @@ body {
   50%      { transform:translateY(-30px) scale(1.05); }
 }
 
-.hero-content { max-width:620px; }
+.hero-content { max-width:620px; position:relative; z-index:1; }
 
 .hero-greeting {
   font-size:1rem;
@@ -217,6 +220,7 @@ body {
 
 .hero-photo {
   display:flex; align-items:center; justify-content:center;
+  position:relative; z-index:1;
 }
 .photo-ring {
   width:320px; height:320px;
