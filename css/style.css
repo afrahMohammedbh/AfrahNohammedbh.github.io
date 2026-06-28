@@ -716,19 +716,31 @@ body {
   color: var(--rose-deep);
 }
 
-/* Courses inside edu card — compact */
+/* Courses — compact flex tags */
 .edu-card .courses-grid {
-  grid-template-columns: repeat(3, 1fr);
+  display: flex;
+  flex-wrap: wrap;
   gap: 8px;
-  display: grid;
 }
 .edu-card .course-item {
-  padding: 8px 12px;
+  padding: 6px 14px;
+  border-radius: 99px;
+  background: var(--white);
+  border: 1.5px solid var(--border);
+  box-shadow: none;
+  width: auto;
+  flex-shrink: 0;
+}
+.edu-card .course-item:hover {
+  transform: none;
+  box-shadow: none;
 }
 .edu-card .course-item span {
-  font-size: .8rem;
+  font-size: .82rem;
+  font-weight: 600;
+  color: var(--text);
+  white-space: nowrap;
 }
-/* Make highlighted courses same white as others */
 .edu-card .course-item.highlight {
   border-color: var(--border);
   background: var(--white);
@@ -736,9 +748,8 @@ body {
 .edu-card .course-item.highlight span {
   color: var(--text);
 }
-/* "Key Courses" label */
 .courses-label {
-  grid-column: 1 / -1;
+  width: 100%;
   font-size: .75rem;
   font-weight: 700;
   letter-spacing: .12em;
@@ -746,7 +757,6 @@ body {
   color: var(--rose);
   margin-bottom: 4px;
 }
-
 /* ─── RESPONSIVE ─── */
 @media (max-width:900px) {
   .navbar { padding:16px 24px; }
