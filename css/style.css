@@ -389,13 +389,13 @@ body {
 /* ─── SKILLS ─── */
 .skills-grid {
   display:grid;
-  grid-template-columns:repeat(auto-fill, minmax(300px, 1fr));
-  gap:24px;
+  grid-template-columns:repeat(auto-fill, minmax(280px, 1fr));
+  gap:14px;
 }
 .skill-group {
   background: var(--white);
   border-radius:var(--radius);
-  padding:28px;
+  padding:20px;
   border:1.5px solid var(--border);
   box-shadow: var(--shadow);
   transition:transform .25s;
@@ -564,7 +564,7 @@ body {
 .contact-form-wrap {
   background:var(--white);
   border-radius:28px;
-  padding:44px 40px;
+  padding:32px 30px;
   border:1.5px solid var(--border);
   box-shadow: 0 8px 40px rgba(180,100,200,.10);
 }
@@ -611,7 +611,7 @@ body {
   background:#fff;
 }
 .form-group textarea {
-  height:150px; resize:vertical;
+  height:110px; resize:vertical;
   padding:14px 18px;
   font-family:inherit;
 }
@@ -675,26 +675,6 @@ body {
 }
 .info-card:hover .info-arrow { opacity:1; transform:translateX(0); }
 
-.availability-badge {
-  display:inline-flex; align-items:center; gap:10px;
-  background:linear-gradient(135deg,#f0fdf4,#dcfce7);
-  border:1.5px solid #86efac;
-  border-radius:50px; padding:12px 20px;
-  font-size:.88rem; font-weight:600; color:#166534;
-  align-self:flex-start;
-}
-.avail-dot {
-  width:9px; height:9px; border-radius:50%;
-  background:#22c55e;
-  box-shadow:0 0 0 3px rgba(34,197,94,.25);
-  animation:pulse-dot 2s infinite;
-  flex-shrink:0;
-}
-@keyframes pulse-dot {
-  0%,100% { box-shadow:0 0 0 3px rgba(34,197,94,.25); }
-  50%      { box-shadow:0 0 0 6px rgba(34,197,94,.10); }
-}
-
 /* ─── FOOTER ─── */
 .footer {
   background:var(--text);
@@ -723,7 +703,6 @@ body {
   transform:translate(0);
 }
 
-
 /* Badge link */
 .badge-link {
   text-decoration: none;
@@ -735,18 +714,36 @@ body {
   color: var(--rose-deep);
 }
 
-/* Courses inside edu card — smaller */
+/* Courses inside edu card — compact */
 .edu-card .courses-grid {
-  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-  gap: 10px;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 8px;
+  display: grid;
 }
 .edu-card .course-item {
-  padding: 10px 14px;
+  padding: 8px 12px;
 }
 .edu-card .course-item span {
-  font-size: .82rem;
+  font-size: .8rem;
 }
-
+/* Make highlighted courses same white as others */
+.edu-card .course-item.highlight {
+  border-color: var(--border);
+  background: var(--white);
+}
+.edu-card .course-item.highlight span {
+  color: var(--text);
+}
+/* "Key Courses" label */
+.courses-label {
+  grid-column: 1 / -1;
+  font-size: .75rem;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--rose);
+  margin-bottom: 4px;
+}
 
 /* ─── RESPONSIVE ─── */
 @media (max-width:900px) {
