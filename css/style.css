@@ -658,15 +658,29 @@ body {
 .contact-info-header p {
   font-size:.95rem; color:var(--text-soft); line-height:1.65;
 }
-.info-cards { display:flex; flex-direction:column; gap:14px; }
+.info-cards {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
 .info-card {
-  display:flex; gap:16px; align-items:center;
-  background:var(--white);
-  border-radius:18px; padding:20px 22px;
-  border:1.5px solid var(--border);
-  box-shadow:0 2px 14px rgba(180,100,200,.07);
-  text-decoration:none;
-  transition:transform .25s, box-shadow .25s, border-color .25s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 10px;
+  background: var(--white);
+  border-radius: 20px;
+  padding: 28px 24px;
+  border: 1.5px solid var(--border);
+  box-shadow: 0 2px 14px rgba(180,100,200,.07);
+  text-decoration: none;
+  transition: transform .25s, box-shadow .25s, border-color .25s;
+  min-width: 180px;
+  flex: 1;
+  max-width: 240px;
 }
 .info-card:hover {
   transform:translateY(-4px);
