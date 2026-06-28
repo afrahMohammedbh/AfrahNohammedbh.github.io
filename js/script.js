@@ -73,20 +73,27 @@ const form = document.getElementById("contactForm");
 if (form) {
   form.addEventListener("submit", function (e) {
     e.preventDefault();
+    const name    = document.getElementById("name").value.trim();
+    const email   = document.getElementById("email").value.trim();
+    const subject = document.getElementById("subject").value.trim() || "Portfolio Contact";
+    const message = document.getElementById("message").value.trim();
+
+    if (!name || !email || !message) return;
+
+    const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\n${message}`);
+    const mailtoLink = `mailto:afrahmohammed.bh@gmail.com?subject=${encodeURIComponent(subject)}&body=${body}`;
+    window.location.href = mailtoLink;
+
     const btn = form.querySelector(".btn-send");
     const textEl = btn.querySelector(".btn-send-text");
     const iconEl = btn.querySelector(".btn-send-icon");
-    textEl.textContent = "Sent!";
+    textEl.textContent = "Opening email…";
     iconEl.textContent = "✅";
     btn.disabled = true;
-    btn.style.background = "linear-gradient(135deg,#34d399,#059669)";
-    btn.style.boxShadow = "0 4px 20px rgba(52,211,153,.35)";
     setTimeout(() => {
       textEl.textContent = "Send Message";
       iconEl.textContent = "✈️";
       btn.disabled = false;
-      btn.style.background = "";
-      btn.style.boxShadow = "";
       form.reset();
     }, 3000);
   });
