@@ -723,6 +723,31 @@ body {
   transform:translate(0);
 }
 
+
+/* Badge link */
+.badge-link {
+  text-decoration: none;
+  color: var(--text-mid);
+  transition: border-color .2s, color .2s;
+}
+.badge-link:hover {
+  border-color: var(--rose);
+  color: var(--rose-deep);
+}
+
+/* Courses inside edu card — smaller */
+.edu-card .courses-grid {
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 10px;
+}
+.edu-card .course-item {
+  padding: 10px 14px;
+}
+.edu-card .course-item span {
+  font-size: .82rem;
+}
+
+
 /* ─── RESPONSIVE ─── */
 @media (max-width:900px) {
   .navbar { padding:16px 24px; }
