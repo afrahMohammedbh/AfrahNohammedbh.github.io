@@ -558,23 +558,20 @@ body {
   justify-content: center;
 }
 .contact-info {
-  max-width: 600px;
   width: 100%;
-  align-items: center;
+  max-width: 860px;
 }
-.contact-info-header {
-  text-align: center;
+.info-cards {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: center;
 }
-.contact-info-header h3 {
-  font-size: 1.6rem;
-  font-weight: 700;
-  color: var(--text);
-  margin-bottom: 10px;
-}
-.contact-info-header p {
-  font-size: 1rem;
-  color: var(--text-soft);
-  margin-bottom: 32px;
+.info-card {
+  flex: 1;
+  min-width: 200px;
+  max-width: 280px;
 }
 
 /* ── Form Side ── */
